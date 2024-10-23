@@ -1,5 +1,25 @@
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('../shared/fonts/RobotoMono-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('../shared/fonts/RobotoMono-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'RobotoMono';
+    font-weight: normal;
 }
+
+// #92000A

@@ -2,6 +2,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { store } from './store';
 import * as Pages from '@pages';
+import './App.scss';
 
 
 export const App = () => {
