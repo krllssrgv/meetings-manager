@@ -23,6 +23,9 @@ export const AuthLayout = () => {
                     Регистрация
                 </Link>
             </div>
+            <h1 className={styles.headline}>
+                {location.pathname === APP_ROUTES.login ? 'Вход' : 'Регистрация'}
+            </h1>
             <Outlet />
         </section>
     );

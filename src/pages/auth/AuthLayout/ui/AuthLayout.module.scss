@@ -19,7 +19,6 @@
 
 .link {
     display: block;
-    width: 235px;
     border-bottom: 2px solid #fff;
     text-decoration: none;
     color: #000;
@@ -32,4 +31,13 @@
         color: $main-color;
         border-bottom-color: $main-color;
     }
+}
+
+
+.headline {
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
 }
