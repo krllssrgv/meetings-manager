@@ -1,4 +1,6 @@
 import { useEffect } from "react"
+import { LoginWindow } from "@widgets";
+
 
 export const LoginPage = () => {
     useEffect(() => {
@@ -6,5 +8,9 @@ export const LoginPage = () => {
     }, []);
 
 
-    return <></>
+    return (
+        <>  
+            <LoginWindow />
+        </>
+    );
 }
