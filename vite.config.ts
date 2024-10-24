@@ -15,4 +15,11 @@ export default defineConfig({
             '@shared': path.resolve(__dirname, './src/shared/index'),
         },
     },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                additionalData: `@use "src/shared/consts/variables.scss" as *;`
+            },
+        },
+    }
 });
