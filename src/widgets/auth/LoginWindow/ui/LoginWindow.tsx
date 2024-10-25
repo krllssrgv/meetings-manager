@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { InputsContainer, AuthError } from "@features";
-import { LongButton, TextInput, Waiting } from "@shared";
+import { LongButton, TextInput } from "@shared";
 
 
 export const LoginWindow = () => {
@@ -15,7 +15,6 @@ export const LoginWindow = () => {
         setLoading(true);
     };
 
-    const renderButtonOrLoading = loading ? <Waiting /> : <LongButton func={loginHandle} text='Войти' />
 
     return (
         <>  
@@ -36,7 +35,7 @@ export const LoginWindow = () => {
                 />
             </InputsContainer>
             <AuthError error={error} />
-            {renderButtonOrLoading}
+            <LongButton func={loginHandle} text='Войти' loading={loading} />
         </>
     );
 }

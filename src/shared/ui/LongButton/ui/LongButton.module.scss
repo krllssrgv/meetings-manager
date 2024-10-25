@@ -7,8 +7,26 @@
     border: none;
     outline: none;
     font-size: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	&:hover {
 		cursor: pointer;
 	}
+}
+
+
+.image {
+	height: 40px;
+	background-color: $main-color;
+	animation: rotate 2s linear infinite;
+	border-radius: 50%;
+}
+
+
+@keyframes rotate {
+	0% {transform: rotate(0deg);}
+	50% {transform: rotate(180deg);}
+	100% {transform: rotate(360deg);}
 }

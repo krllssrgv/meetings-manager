@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { InputsContainer, AuthError, RegAsOrg } from "@features";
-import { LongButton, TextInput, Waiting, API_URL, APP_ROUTES } from "@shared";
+import { LongButton, TextInput, API_URL, APP_ROUTES } from "@shared";
 
 
 export const RegisterWindow = () => {
@@ -55,7 +55,6 @@ export const RegisterWindow = () => {
         fetchRegister();
     };
 
-    const renderButtonOrLoading = loading ? <Waiting /> : <LongButton func={registerHandle} text='Зарегистрироваться' />
 
     return (
         <>  
@@ -105,7 +104,7 @@ export const RegisterWindow = () => {
             </InputsContainer>
             <RegAsOrg asOrg={asOrg} setAsOrg={setAsOrg} />
             <AuthError error={error} />
-            {renderButtonOrLoading}
+            <LongButton func={registerHandle} text='Зарегистрироваться' loading={loading} />
         </>
     );
 }
