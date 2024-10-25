@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { InputsContainer, AuthError, RegAsOrg } from "@features";
-import { LongButton, TextInput, Waiting } from "@shared";
+import { LongButton, TextInput, Waiting, API_URL, APP_ROUTES } from "@shared";
 
 
 export const RegisterWindow = () => {
@@ -13,11 +14,45 @@ export const RegisterWindow = () => {
     const [asOrg, setAsOrg] = useState(false);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
 
     const registerHandle = () => {
-        // Добавить логику отправки запроса
+        setError('');
         setLoading(true);
+
+        const fetchRegister = async () => {
+            try {
+                const response = await fetch(`${API_URL}auth/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password,
+                        repeated_password: repeatedPassword,
+                        name: name,
+                        lastname: lastname,
+                        fathername: fathername,
+                        as_org: asOrg
+                    })
+                });
+
+                setLoading(false);
+                if (response.ok) {
+                    navigate(APP_ROUTES.login);
+                } else {
+                    const json = await response.json();
+                    setError(json.error);
+                }
+            } catch {
+                setError('Ошибка подключения');
+                setLoading(false);
+            }
+        }
+
+        fetchRegister();
     };
 
     const renderButtonOrLoading = loading ? <Waiting /> : <LongButton func={registerHandle} text='Зарегистрироваться' />
