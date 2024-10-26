@@ -16,7 +16,7 @@ export const AuthLayout = () => {
             dispatch(fetchUser());
         }
     }, [dispatch, user.wasLoaded]);
-
+    
 
     if (user.wasLoaded) {
         return <Navigate to={user.user.owner ? APP_ROUTES.ownMain : APP_ROUTES.userMain} replace />

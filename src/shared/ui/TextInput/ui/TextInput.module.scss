@@ -11,8 +11,6 @@
 	display: block;
 	width: 100%;
 	font-size: 16px;
-	font-style: normal;
-	font-weight: 400;
 	z-index: 4;
 	position: relative;
 	background: none;
@@ -36,12 +34,26 @@
 	left: 12px;
 	z-index: 3;
 	font-size: 16px;
-	font-style: normal;
-	font-weight: 400;
 	background-color: #fff;
 	user-select: none;
 	transition: .4s all;
 	padding: 2px 5px;
 	border-radius: 5px;
 	color: black;
+}
+
+
+@media (max-width: 500px) {
+	.input {
+		height: 42px;
+		padding: 8px 10px;
+		font-size: 15px;
+	}
+
+
+	.placeholder {
+		top: 8px;
+		left: 12px;
+		font-size: 15px;
+	}
 }
