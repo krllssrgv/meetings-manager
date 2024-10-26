@@ -8,7 +8,7 @@ export { APP_ROUTES } from './consts/appRoutes'
 // UI
 export { LongButton } from './ui/LongButton';
 export { TextInput } from './ui/TextInput';
-export { Waiting } from './ui/Waiting';
 
-// Icons
-export { default as waitingIcon } from './icons/waiting.svg';
+
+// Img
+export { default as orangeLoadingImg } from './img/orange_loading.png';

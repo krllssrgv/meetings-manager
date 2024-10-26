@@ -3,7 +3,8 @@ import { fetchUser } from "../thunks/fetchUser";
 
 
 export type AuthState = {
-    login: boolean;
+    tryToFetch: boolean;
+    wasLoaded: boolean;
     user: {
         name: string;
         lastname: string;
@@ -14,7 +15,8 @@ export type AuthState = {
 
 
 const initialState: AuthState = {
-    login: false,
+    tryToFetch: true,
+    wasLoaded: false,
     user: {
         name: '',
         lastname: '',
@@ -27,14 +29,12 @@ const initialState: AuthState = {
 const authSlice = createSlice({
     name: 'auth',
     initialState,
-    reducers: {
-        loginUser: (state: AuthState) => {
-            state.login = true;
-        }
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(fetchUser.fulfilled, (state: AuthState, action) => {
+                state.wasLoaded = true;
+                state.tryToFetch = false;
                 state.user.name = action.payload.name;
                 state.user.lastname = action.payload.lastname;
                 state.user.fathername = action.payload.fathername;
@@ -42,7 +42,7 @@ const authSlice = createSlice({
             })
             .addCase(fetchUser.rejected, (state: AuthState, action) => {
                 if (action.payload === 'auth') {
-                    state.login = false;
+                    state.tryToFetch = false;
                 }
             })
             .addDefaultCase(() => {});
@@ -50,5 +50,5 @@ const authSlice = createSlice({
 });
 
 
-export const { loginUser } = authSlice.actions;
+// export const { } = authSlice.actions;
 export const authReducer = authSlice.reducer

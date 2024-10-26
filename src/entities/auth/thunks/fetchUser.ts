@@ -6,18 +6,19 @@ export const fetchUser = createAsyncThunk(
     'auth/fetchUser',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await fetch(`${API_URL}get_user`, {
+            const response = await fetch(`${API_URL}auth/get_user`, {
                 method: 'GET',
+                credentials: 'include'
             });
-            const data = await response.json();
-
+            
             if (response.ok) {
+                const data = await response.json();
                 return data;
             } else {
-                rejectWithValue('auth');
+                return rejectWithValue('auth');
             }
         } catch {
-            rejectWithValue('network');
+            return rejectWithValue('network');
         }
     }
 )

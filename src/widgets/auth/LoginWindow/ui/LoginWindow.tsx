@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { InputsContainer, AuthError } from "@features";
-import { LongButton, TextInput } from "@shared";
+import { fetchUser } from "@entities";
+import { LongButton, TextInput, API_URL, useAppDispatch } from "@shared";
 
 
 export const LoginWindow = () => {
@@ -8,11 +9,41 @@ export const LoginWindow = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const dispatch = useAppDispatch();
 
 
     const loginHandle = () => {
-        // Добавить логику отправки запроса
+        setError('');
         setLoading(true);
+
+        const fetchLogin = async () => {
+            try {
+                const response = await fetch(`${API_URL}auth/login`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+                });
+
+                if (response.ok) {
+                    dispatch(fetchUser());
+                } else {
+                    const json = await response.json();
+                    setLoading(false);
+                    setError(json.error);
+                }
+            } catch {
+                setError('Ошибка подключения');
+                setLoading(false);
+            }
+        }
+
+        fetchLogin();
     };
 
 

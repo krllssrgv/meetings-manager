@@ -11,7 +11,7 @@ type Props = {
 
 export const LongButton = ({ func, text, loading }: Props) => {
     return(
-        <button className={styles.button} onClick={func}>
+        <button className={styles.button} onClick={loading ? () => {} : func}>
             {loading ? <img src={loadingIcon} alt='Загрузка...' className={styles.image} /> : text}
         </button>
     );
