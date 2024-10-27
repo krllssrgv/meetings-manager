@@ -6,7 +6,7 @@ type Props = {
 
 export const AuthError = ({ error }: Props) => {
     return (
-        <div className={styles.error}>
+        <div data-testid="error-div" className={styles.error}>
             {error}
         </div>
     );

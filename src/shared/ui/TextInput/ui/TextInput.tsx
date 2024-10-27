@@ -22,8 +22,9 @@ export const TextInput = ({ type, name, label, value, setValue }: Props) => {
                 className={styles.input}
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
+                data-testid="input"
             />
-            <label htmlFor={name} className={styles.placeholder}>{label}</label>
+            <label data-testid="label" htmlFor={name} className={styles.placeholder}>{label}</label>
         </div>
     )
 };
