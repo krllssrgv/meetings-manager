@@ -1,6 +1,5 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { API_URL } from "@shared";
-
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { API_URL } from '@shared';
 
 export const fetchUser = createAsyncThunk(
     'auth/fetchUser',
@@ -8,9 +7,9 @@ export const fetchUser = createAsyncThunk(
         try {
             const response = await fetch(`${API_URL}auth/get_user`, {
                 method: 'GET',
-                credentials: 'include'
+                credentials: 'include',
             });
-            
+
             if (response.ok) {
                 const data = await response.json();
                 return data;
@@ -21,4 +20,4 @@ export const fetchUser = createAsyncThunk(
             return rejectWithValue('network');
         }
     }
-)
+);

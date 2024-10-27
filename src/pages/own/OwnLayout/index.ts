@@ -1,1 +1,1 @@
-export { OwnLayout } from './ui/OwnLayout'
+export { OwnLayout } from './ui/OwnLayout';

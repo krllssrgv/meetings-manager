@@ -2,7 +2,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { RegAsOrg } from './RegAsOrg';
 import type { Dispatch, SetStateAction } from 'react';
 
-
 describe('RegAsOrg', () => {
     it('При переданном значении true элемент является отмеченным (checked)', () => {
         // arrange

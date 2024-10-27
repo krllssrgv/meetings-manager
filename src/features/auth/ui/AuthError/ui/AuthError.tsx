@@ -2,7 +2,7 @@ import styles from './AuthError.module.scss';
 
 type Props = {
     error: string;
-}
+};
 
 export const AuthError = ({ error }: Props) => {
     return (
@@ -10,4 +10,4 @@ export const AuthError = ({ error }: Props) => {
             {error}
         </div>
     );
-}
+};

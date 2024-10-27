@@ -9,13 +9,17 @@ type Props = {
 export const RegAsOrg = ({ asOrg, setAsOrg }: Props) => {
     return (
         <div className={styles.container}>
-            <input 
+            <input
                 type="checkbox"
                 className={styles.box}
                 checked={asOrg}
-                onChange={(e) => {setAsOrg(e.target.checked)}} 
+                onChange={(e) => {
+                    setAsOrg(e.target.checked);
+                }}
             />
-            <div className={styles.text}>Зарегистрироваться как организация</div>
+            <div className={styles.text}>
+                Зарегистрироваться как организация
+            </div>
         </div>
     );
 };

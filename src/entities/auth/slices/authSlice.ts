@@ -1,6 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { fetchUser } from "../thunks/fetchUser";
-
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchUser } from '../thunks/fetchUser';
 
 export type AuthState = {
     tryToFetch: boolean;
@@ -10,9 +9,8 @@ export type AuthState = {
         lastname: string;
         fathername: string;
         owner: boolean;
-    },
+    };
 };
-
 
 const initialState: AuthState = {
     tryToFetch: true,
@@ -24,7 +22,6 @@ const initialState: AuthState = {
         owner: false,
     },
 };
-
 
 const authSlice = createSlice({
     name: 'auth',
@@ -46,9 +43,8 @@ const authSlice = createSlice({
                 }
             })
             .addDefaultCase(() => {});
-    }
+    },
 });
 
-
 // export const { } = authSlice.actions;
-export const authReducer = authSlice.reducer
+export const authReducer = authSlice.reducer;

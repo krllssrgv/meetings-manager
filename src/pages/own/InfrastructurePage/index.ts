@@ -1,1 +1,1 @@
-export { InfrastructurePage } from './ui/InfrastructurePage'
+export { InfrastructurePage } from './ui/InfrastructurePage';

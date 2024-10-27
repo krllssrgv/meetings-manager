@@ -1,7 +1,7 @@
-import { render, screen } from "@testing-library/react";
-import { TextInput } from "./TextInput";
+import { render, screen } from '@testing-library/react';
+import { TextInput } from './TextInput';
 import userEvent from '@testing-library/user-event';
-import type { Dispatch, SetStateAction } from "react";
+import type { Dispatch, SetStateAction } from 'react';
 
 describe('TextInput', () => {
     it('При пустом value поле ввода текста пустое, а label содержит переданный текст', () => {
@@ -13,13 +13,15 @@ describe('TextInput', () => {
         const setValue = vi.fn() as Dispatch<SetStateAction<string>>;
 
         // act
-        render(<TextInput 
-            type={type}
-            name={name}
-            value={value}
-            label={label}
-            setValue={setValue}
-        />);
+        render(
+            <TextInput
+                type={type}
+                name={name}
+                value={value}
+                label={label}
+                setValue={setValue}
+            />
+        );
         const inputElement = screen.getByTestId('input');
         const labelElement = screen.getByTestId('label');
 
@@ -38,13 +40,15 @@ describe('TextInput', () => {
         const typedText = 'It typed this text';
 
         // act
-        render(<TextInput 
-            type={type}
-            name={name}
-            value={value}
-            label={label}
-            setValue={setValue}
-        />);
+        render(
+            <TextInput
+                type={type}
+                name={name}
+                value={value}
+                label={label}
+                setValue={setValue}
+            />
+        );
         const inputElement = screen.getByTestId('input');
         await userEvent.type(inputElement, typedText);
 

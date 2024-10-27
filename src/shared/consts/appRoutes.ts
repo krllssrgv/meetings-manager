@@ -1,4 +1,4 @@
-export const APP_ROUTES = {    
+export const APP_ROUTES = {
     login: '/auth/login',
     register: '/auth/register',
 
@@ -10,5 +10,5 @@ export const APP_ROUTES = {
 
     ownMain: '/own',
     ownInf: '/own/infrastructure',
-    ownMembers: '/own/members'
+    ownMembers: '/own/members',
 };

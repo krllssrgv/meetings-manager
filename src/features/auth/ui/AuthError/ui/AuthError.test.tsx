@@ -1,6 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import { AuthError } from "./AuthError";
-
+import { render, screen } from '@testing-library/react';
+import { AuthError } from './AuthError';
 
 describe('AuthError', () => {
     it('При отсутствии текста ошибки элемент существует', () => {
@@ -18,7 +17,7 @@ describe('AuthError', () => {
     it('Если текст передан, то элемент отображает его', () => {
         // arrange
         const value = 'Ошибка подключения';
-        
+
         // act
         render(<AuthError error={value} />);
         const errorElement = screen.getByTestId('error-div');

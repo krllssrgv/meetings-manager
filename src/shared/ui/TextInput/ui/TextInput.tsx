@@ -1,7 +1,6 @@
 import type { Dispatch, SetStateAction } from 'react';
 import styles from './TextInput.module.scss';
 
-
 type Props = {
     type: string;
     name: string;
@@ -10,11 +9,10 @@ type Props = {
     setValue: Dispatch<SetStateAction<string>>;
 };
 
-
 export const TextInput = ({ type, name, label, value, setValue }: Props) => {
     return (
         <div className={styles.input_container}>
-            <input 
+            <input
                 type={type}
                 name={name}
                 id={name}
@@ -24,7 +22,13 @@ export const TextInput = ({ type, name, label, value, setValue }: Props) => {
                 onChange={(e) => setValue(e.target.value)}
                 data-testid="input"
             />
-            <label data-testid="label" htmlFor={name} className={styles.placeholder}>{label}</label>
+            <label
+                data-testid="label"
+                htmlFor={name}
+                className={styles.placeholder}
+            >
+                {label}
+            </label>
         </div>
-    )
+    );
 };

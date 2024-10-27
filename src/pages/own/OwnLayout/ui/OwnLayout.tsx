@@ -1,13 +1,12 @@
-import { Outlet, Navigate } from "react-router-dom";
-import { selectUser } from "@entities";
-import { useAppSelector, APP_ROUTES } from "@shared";
-
+import { Outlet, Navigate } from 'react-router-dom';
+import { selectUser } from '@entities';
+import { useAppSelector, APP_ROUTES } from '@shared';
 
 export const OwnLayout = () => {
     const user = useAppSelector(selectUser);
 
     if (!user.wasLoaded) {
-        return <Navigate to={APP_ROUTES.login} replace />
+        return <Navigate to={APP_ROUTES.login} replace />;
     } else {
         return (
             <>
@@ -15,4 +14,4 @@ export const OwnLayout = () => {
             </>
         );
     }
-}
+};

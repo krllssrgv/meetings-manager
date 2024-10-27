@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { InputsContainer, AuthError, RegAsOrg } from "@features";
-import { LongButton, TextInput, API_URL, APP_ROUTES } from "@shared";
-
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { InputsContainer, AuthError, RegAsOrg } from '@features';
+import { LongButton, TextInput, API_URL, APP_ROUTES } from '@shared';
 
 export const RegisterWindow = () => {
     const [email, setEmail] = useState('');
@@ -16,7 +15,6 @@ export const RegisterWindow = () => {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
-
     const registerHandle = () => {
         setError('');
         setLoading(true);
@@ -26,7 +24,7 @@ export const RegisterWindow = () => {
                 const response = await fetch(`${API_URL}auth/register`, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
                         email: email,
@@ -35,8 +33,8 @@ export const RegisterWindow = () => {
                         name: name,
                         lastname: lastname,
                         fathername: fathername,
-                        as_org: asOrg
-                    })
+                        as_org: asOrg,
+                    }),
                 });
 
                 setLoading(false);
@@ -50,61 +48,64 @@ export const RegisterWindow = () => {
                 setError('Ошибка подключения');
                 setLoading(false);
             }
-        }
+        };
 
         fetchRegister();
     };
 
-
     return (
-        <>  
+        <>
             <InputsContainer>
                 <TextInput
-                    type='text'
-                    name='email'
-                    label='Email'
+                    type="text"
+                    name="email"
+                    label="Email"
                     value={email}
                     setValue={setEmail}
                 />
                 <TextInput
-                    type='password'
-                    name='password'
-                    label='Пароль'
+                    type="password"
+                    name="password"
+                    label="Пароль"
                     value={password}
                     setValue={setPassword}
                 />
                 <TextInput
-                    type='password'
-                    name='repeated-password'
-                    label='Пароль повторно'
+                    type="password"
+                    name="repeated-password"
+                    label="Пароль повторно"
                     value={repeatedPassword}
                     setValue={setRepeatedPassword}
                 />
                 <TextInput
-                    type='text'
-                    name='name'
-                    label='Имя'
+                    type="text"
+                    name="name"
+                    label="Имя"
                     value={name}
                     setValue={setName}
                 />
                 <TextInput
-                    type='text'
-                    name='lastname'
-                    label='Фамилия'
+                    type="text"
+                    name="lastname"
+                    label="Фамилия"
                     value={lastname}
                     setValue={setLastname}
                 />
                 <TextInput
-                    type='text'
-                    name='fathername'
-                    label='Отчество'
+                    type="text"
+                    name="fathername"
+                    label="Отчество"
                     value={fathername}
                     setValue={setFathername}
                 />
             </InputsContainer>
             <RegAsOrg asOrg={asOrg} setAsOrg={setAsOrg} />
             <AuthError error={error} />
-            <LongButton func={registerHandle} text='Зарегистрироваться' loading={loading} />
+            <LongButton
+                func={registerHandle}
+                text="Зарегистрироваться"
+                loading={loading}
+            />
         </>
     );
-}
+};

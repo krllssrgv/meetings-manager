@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 import { RegisterWindow } from '@widgets';
 
 export const RegisterPage = () => {
@@ -6,10 +6,9 @@ export const RegisterPage = () => {
         document.title = 'Регистрация';
     }, []);
 
-
     return (
-        <>  
+        <>
             <RegisterWindow />
         </>
     );
-}
+};

@@ -13,12 +13,10 @@
     user-select: none;
 }
 
-
 .waiting_text {
     font-size: 28px;
     font-weight: bold;
 }
-
 
 .waiting_image {
     display: block;
@@ -27,7 +25,6 @@
     animation: rotate 3s linear infinite;
     background: none;
 }
-
 
 .auth_window {
     width: 450px;
@@ -38,14 +35,12 @@
     transform: translateY(30px);
 }
 
-
 .switcher {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin-bottom: 30px;
 }
-
 
 .link {
     display: block;
@@ -63,7 +58,6 @@
     }
 }
 
-
 .headline {
     font-weight: bold;
     display: block;
@@ -72,13 +66,17 @@
     margin-bottom: 20px;
 }
 
-
 @keyframes rotate {
-    0% {transform: rotate(0deg);}
-    50% {transform: rotate(180deg);}
-    100% {transform: rotate(360deg);}
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
-
 
 @media (max-width: 768px) {
     .waiting {
@@ -87,13 +85,11 @@
         transform: translateY(20px);
         gap: 30px;
     }
-    
-    
+
     .waiting_text {
         font-size: 25px;
     }
-    
-    
+
     .waiting_image {
         height: 70px;
         width: 70px;
@@ -110,7 +106,6 @@
     }
 }
 
-
 @media (max-width: 500px) {
     .waiting {
         width: 300px;
@@ -118,13 +113,11 @@
         transform: translateY(10px);
         gap: 20px;
     }
-    
-    
+
     .waiting_text {
         font-size: 22px;
     }
-    
-    
+
     .waiting_image {
         height: 50px;
         width: 50px;

@@ -1,6 +1,5 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import { LongButton } from "./LongButton";
-
+import { render, screen, fireEvent } from '@testing-library/react';
+import { LongButton } from './LongButton';
 
 describe('LongButton', () => {
     it('При нажатии кнопки выполняется функция func', () => {
