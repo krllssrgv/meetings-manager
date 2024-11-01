@@ -1,1 +1,1 @@
-export { MainOwnPage } from './ui/MainIwnPage'
+export { MainOwnPage } from './ui/MainIwnPage';

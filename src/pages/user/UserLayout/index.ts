@@ -1,1 +1,1 @@
-export { UserLayout } from './ui/UserLayout'
+export { UserLayout } from './ui/UserLayout';

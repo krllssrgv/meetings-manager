@@ -1,10 +1,9 @@
-import { useEffect } from "react"
+import { useEffect } from 'react';
 
 export const MembersPage = () => {
     useEffect(() => {
         document.title = 'Участники организации';
     }, []);
 
-
-    return <></>
-}
+    return <></>;
+};

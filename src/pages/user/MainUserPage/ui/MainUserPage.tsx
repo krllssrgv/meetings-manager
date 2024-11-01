@@ -1,10 +1,9 @@
-import { useEffect } from "react"
+import { useEffect } from 'react';
 
 export const MainUserPage = () => {
     useEffect(() => {
         document.title = 'Главная';
     }, []);
 
-
-    return <></>
-}
+    return <></>;
+};

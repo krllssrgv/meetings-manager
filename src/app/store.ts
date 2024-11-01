@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { authReducer } from '@entities';
 
 export const store = configureStore({
-    reducer: {},
+    reducer: {
+        auth: authReducer,
+    },
 });
 
 declare global {
