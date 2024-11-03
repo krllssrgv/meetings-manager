@@ -20,7 +20,27 @@ export const App = () => {
                             element={<Pages.RegisterPage />}
                         />
                     </Route>
-                    <Route path="/user" element={<Pages.UserLayout />}>
+                    <Route path="/" element={<Pages.GeneralLayout />}>
+                        <Route index element={<Pages.MainUserPage />}>
+
+                        </Route>
+
+                        <Route path='control' element={<Pages.MainUserPage />}>
+
+                        </Route>
+
+                        <Route path='events' element={<Pages.MainUserPage />}>
+                            
+                        </Route>
+
+                        <Route path='profile' element={<Pages.MainUserPage />}>
+                            
+                        </Route>
+                    </Route>
+
+
+
+                    <Route path="/" element={<Pages.UserLayout />}>
                         <Route index element={<Pages.MainUserPage />} />
                         <Route
                             path="organizations"
@@ -32,8 +52,6 @@ export const App = () => {
                             element={<Pages.EventPage />}
                         />
                         <Route path="profile" element={<Pages.ProfilePage />} />
-                    </Route>
-                    <Route path="/own" element={<Pages.OwnLayout />}>
                         <Route index element={<Pages.MainOwnPage />} />
                         <Route
                             path="infrastructure"
@@ -41,6 +59,7 @@ export const App = () => {
                         />
                         <Route path="members" element={<Pages.MembersPage />} />
                     </Route>
+
                     <Route
                         path="*"
                         element={<Navigate to="/auth/login" replace />}

@@ -1,4 +1,5 @@
 // Auth
+export { GeneralLayout } from './auth/GeneralLayout';
 export { AuthLayout } from './auth/AuthLayout';
 export { LoginPage } from './auth/LoginPage';
 export { RegisterPage } from './auth/RegisterPage';
