@@ -24,7 +24,7 @@ export const AuthLayout = () => {
     if (user.wasLoaded) {
         return (
             <Navigate
-                to={user.user.owner ? APP_ROUTES.ownMain : APP_ROUTES.userMain}
+                to={APP_ROUTES.main}
                 replace
             />
         );
