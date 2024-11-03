@@ -1,5 +1,11 @@
 import { Provider } from 'react-redux';
-import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    Navigate,
+    Outlet,
+} from 'react-router-dom';
 import { store } from './store';
 import * as Pages from '@pages';
 import './App.scss';
@@ -26,23 +32,38 @@ export const App = () => {
                             <Route path="set" element={<Pages.SetPage />} />
                         </Route>
 
-                        <Route path='control' element={<Outlet />}>
+                        <Route path="control" element={<Outlet />}>
                             <Route index element={<Pages.ControlPage />} />
-                            <Route path="members" element={<Pages.MembersPage />} />
+                            <Route
+                                path="members"
+                                element={<Pages.MembersPage />}
+                            />
                             <Route path="rooms" element={<Pages.RoomsPage />} />
-                            <Route path="events" element={<Pages.EventsPage />} />
+                            <Route
+                                path="events"
+                                element={<Pages.EventsPage />}
+                            />
                         </Route>
 
-                        <Route path='meetings' element={<Outlet />}>
+                        <Route path="meetings" element={<Outlet />}>
                             <Route index element={<Pages.MeetingsPage />} />
-                            <Route path="myown" element={<Pages.OwnMeetingsPage />} />
+                            <Route
+                                path="myown"
+                                element={<Pages.OwnMeetingsPage />}
+                            />
                             <Route path=":id" element={<Pages.MeetingPage />} />
                         </Route>
 
-                        <Route path='profile' element={<Outlet />}>
+                        <Route path="profile" element={<Outlet />}>
                             <Route index element={<Pages.ProfilePage />} />
-                            <Route path="organizations" element={<Pages.OrganizationsPage />} />
-                            <Route path="invitations" element={<Pages.InvitationsPage />} />
+                            <Route
+                                path="organizations"
+                                element={<Pages.OrganizationsPage />}
+                            />
+                            <Route
+                                path="invitations"
+                                element={<Pages.InvitationsPage />}
+                            />
                         </Route>
                     </Route>
                     <Route

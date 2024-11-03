@@ -16,5 +16,5 @@ export const APP_ROUTES = {
 
     profile: '/profile',
     organizations: '/profile/organizations',
-    invitations: '/profile/invitations'
+    invitations: '/profile/invitations',
 };

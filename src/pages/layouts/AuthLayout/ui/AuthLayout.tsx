@@ -12,6 +12,7 @@ import styles from './AuthLayout.module.scss';
 
 export const AuthLayout = () => {
     const location = useLocation();
+    const fromPage = location.state?.from;
     const user = useAppSelector(selectUser);
     const dispatch = useAppDispatch();
 
@@ -22,12 +23,7 @@ export const AuthLayout = () => {
     }, [dispatch, user.wasLoaded]);
 
     if (user.wasLoaded) {
-        return (
-            <Navigate
-                to={APP_ROUTES.main}
-                replace
-            />
-        );
+        return <Navigate to={fromPage || APP_ROUTES.main} replace />;
     } else {
         if (user.tryToFetch) {
             return (
