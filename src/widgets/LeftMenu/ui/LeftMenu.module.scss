@@ -18,6 +18,11 @@
 
 @media (max-width: 768px) {
     .container {
-        display: none;
+        width: 100%;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: flex-start;
+        padding: 0;
+        overflow-x: auto;
     }
 }
