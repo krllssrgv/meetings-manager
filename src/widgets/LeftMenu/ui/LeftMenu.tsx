@@ -14,35 +14,35 @@ export const LeftMenu = () => {
             case APP_ROUTES.main:
                 return (
                     <>
-                        <MenuLink to='' text='Дашборд' active={true} />
-                        <MenuLink to='' text='Выбрать организацию' active={true} />
+                        <MenuLink to={APP_ROUTES.main} text='Дашборд' active={currentPath === APP_ROUTES.main} />
+                        <MenuLink to={APP_ROUTES.set} text='Выбрать организацию' active={currentPath === APP_ROUTES.set} />
                     </>
                 );
             
             case APP_ROUTES.control:
                 return (
                     <>
-                        <MenuLink to='' text='Организация' active={true} />
-                        <MenuLink to='' text='Участники' active={true} />
-                        <MenuLink to='' text='Аудитории' active={true} />
-                        <MenuLink to='' text='Встречи' active={true} />
+                        <MenuLink to={APP_ROUTES.control} text='Организация' active={currentPath === APP_ROUTES.control} />
+                        <MenuLink to={APP_ROUTES.members} text='Участники' active={currentPath === APP_ROUTES.members} />
+                        <MenuLink to={APP_ROUTES.rooms} text='Аудитории' active={currentPath === APP_ROUTES.rooms} />
+                        <MenuLink to={APP_ROUTES.events} text='Встречи' active={currentPath === APP_ROUTES.events} />
                     </>
                 );
 
             case APP_ROUTES.meetings:
                 return (
                     <>
-                        <MenuLink to='' text='Встречи' active={true} />
-                        <MenuLink to='' text='Мои встречи' active={true} />
+                        <MenuLink to={APP_ROUTES.meetings} text='Встречи' active={currentPath === APP_ROUTES.meetings} />
+                        <MenuLink to={APP_ROUTES.myOwn} text='Мои встречи' active={currentPath === APP_ROUTES.myOwn} />
                     </>
                 );
 
             case APP_ROUTES.profile:
                 return (
                     <>
-                        <MenuLink to='' text='Профиль' active={true} />
-                        <MenuLink to='' text='Организации' active={true} />
-                        <MenuLink to='' text='Приглашения' active={true} />
+                        <MenuLink to={APP_ROUTES.profile} text='Профиль' active={currentPath === APP_ROUTES.profile} />
+                        <MenuLink to={APP_ROUTES.organizations} text='Организации' active={currentPath === APP_ROUTES.organizations} />
+                        <MenuLink to={APP_ROUTES.invitations} text='Приглашения' active={currentPath === APP_ROUTES.invitations} />
                     </>
                 );
         }

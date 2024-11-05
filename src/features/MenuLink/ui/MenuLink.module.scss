@@ -1,7 +1,10 @@
 .link {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     padding: 0 10px;
-    line-height: 35px;
+    height: 35px;
     text-decoration: none;
     color: #000;
     font-weight: bold;
@@ -12,3 +15,14 @@
         background-color: $dark-background;
     }
 }
+
+
+@media (max-width: 1024px) {
+    .link {
+        font-size: 14px;
+        height: auto;
+        min-height: 30px;
+    }
+}
+
+

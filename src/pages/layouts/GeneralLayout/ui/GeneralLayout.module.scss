@@ -1,6 +1,7 @@
 .container {
     max-width: 1440px;
     margin: 0 auto;
+    position: relative;
 }
 
 
@@ -18,4 +19,15 @@
     border-radius: 20px;
     height: 30px;
     flex-grow: 1;
+}
+
+
+@media (max-width: 768px) {
+    .page {
+        margin-top: 5px;
+        padding: 10px;
+    }
+
+
+
 }
