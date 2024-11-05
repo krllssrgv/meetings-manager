@@ -1,5 +1,5 @@
 import { Outlet, Navigate, useLocation } from 'react-router-dom';
-import { Header } from '@widgets';
+import { Header, LeftMenu } from '@widgets';
 import { selectUser } from '@entities';
 import { useAppSelector, APP_ROUTES } from '@shared';
 import styles from './GeneralLayout.module.scss';
@@ -22,9 +22,7 @@ export const GeneralLayout = () => {
             <div className={styles.container}>
                 <Header />
                 <div className={styles.page}>
-                    <aside className={styles.left_menu}>
-
-                    </aside>
+                    <LeftMenu />
 
                     <main className={styles.content}>
                         <Outlet />
